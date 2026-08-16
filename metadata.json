@@ -1,0 +1,6 @@
+{
+  "name": "+1.000 Ejercicios de Baloncesto",
+  "description": "Página oficial de la guía completa de +1.000 ejercicios de baloncesto para mejorar tus entrenamientos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
