@@ -68,7 +68,7 @@ export const WhatYouGetSection: React.FC = () => {
           </div>
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white uppercase font-heading tracking-tight leading-tight">
-            TODO LO QUE NECESITAS PARA ENTRENAR MEJOR
+            TODO LO QUE <span className="text-[#ff5500]">NECESITAS</span> PARA ENTRENAR MEJOR
           </h2>
 
           <p className="text-base sm:text-lg text-zinc-400 font-normal leading-relaxed">
