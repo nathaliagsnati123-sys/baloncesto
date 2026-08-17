@@ -23,6 +23,7 @@ export const FooterSection: React.FC = () => {
         {/* Legal links */}
         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm font-medium text-zinc-400">
           <button
+            type="button"
             onClick={() => setActiveModal('terms')}
             className="hover:text-orange-400 transition-colors focus:outline-none"
           >
@@ -30,6 +31,7 @@ export const FooterSection: React.FC = () => {
           </button>
           <span className="text-zinc-700">|</span>
           <button
+            type="button"
             onClick={() => setActiveModal('privacy')}
             className="hover:text-orange-400 transition-colors focus:outline-none"
           >
@@ -37,6 +39,7 @@ export const FooterSection: React.FC = () => {
           </button>
           <span className="text-zinc-700">|</span>
           <button
+            type="button"
             onClick={() => setActiveModal('contact')}
             className="hover:text-orange-400 transition-colors focus:outline-none"
           >
@@ -62,6 +65,7 @@ export const FooterSection: React.FC = () => {
           <div className="relative w-full max-w-lg rounded-2xl bg-[#121118] border border-orange-500/40 p-6 sm:p-8 text-left shadow-2xl text-zinc-300 max-h-[85vh] overflow-y-auto">
             
             <button
+              type="button"
               onClick={closeModal}
               className="absolute top-4 right-4 text-zinc-400 hover:text-white p-1 rounded-lg bg-zinc-800/80"
               aria-label="Cerrar"
@@ -123,6 +127,7 @@ export const FooterSection: React.FC = () => {
 
             <div className="mt-6 pt-4 border-t border-zinc-800 flex justify-end">
               <button
+                type="button"
                 onClick={closeModal}
                 className="px-4 py-2 rounded-xl bg-orange-500 text-black font-bold text-xs uppercase font-heading"
               >

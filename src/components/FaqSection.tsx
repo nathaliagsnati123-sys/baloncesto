@@ -43,6 +43,7 @@ export const FaqSection: React.FC = () => {
                 }`}
               >
                 <button
+                  type="button"
                   onClick={() => toggleFaq(index)}
                   className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 focus:outline-none"
                   aria-expanded={isOpen}
