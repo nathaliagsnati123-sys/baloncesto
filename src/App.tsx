@@ -10,7 +10,6 @@ import { TestimonialsSection } from './components/TestimonialsSection';
 import { GuaranteeSection } from './components/GuaranteeSection';
 import { FaqSection } from './components/FaqSection';
 import { FooterSection } from './components/FooterSection';
-import { StickyMobileCta } from './components/StickyMobileCta';
 
 export default function App() {
   return (
@@ -32,14 +31,14 @@ export default function App() {
         {/* 4ª Sección — Bonos */}
         <BonusesSection />
 
-        {/* 5ª Sección — Oferta con temporizador */}
-        <OfferSection />
-
-        {/* 6ª Sección — Muestra del material (Carrusel 5 imágenes) */}
+        {/* 5ª Sección — Muestra del material (Carrusel 5 imágenes) */}
         <MaterialPreviewSection />
 
-        {/* 7ª Sección — Testimonios */}
+        {/* 6ª Sección — Testimonios */}
         <TestimonialsSection />
+
+        {/* 7ª Sección — Oferta y Precio con temporizador */}
+        <OfferSection />
 
         {/* 8ª Sección — Garantía de 7 días */}
         <GuaranteeSection />
@@ -50,9 +49,6 @@ export default function App() {
 
       {/* 10ª Sección — Footer */}
       <FooterSection />
-
-      {/* Persistent Floating Sticky CTA Bar */}
-      <StickyMobileCta />
     </div>
   );
 }

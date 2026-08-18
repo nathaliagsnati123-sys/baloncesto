@@ -1,7 +1,7 @@
 import { BenefitItem, BonusItem, CarouselSlide, FaqItem, TestimonialItem } from '../types';
 
 export const CHECKOUT_URL = 'https://pay.hotmart.com/O107175812D?off=apssd549';
-export const PRICE_TEXT = 'US$7';
+export const PRICE_TEXT = 'US$7,00';
 
 export const BENEFITS_DATA: BenefitItem[] = [
   {
@@ -49,7 +49,8 @@ export const BONUSES_DATA: BonusItem[] = [
     description: 'Amplía tus opciones de entrenamiento con 120 ejercicios enfocados en situaciones ofensivas.',
     tag: 'Tácticas & Ataque',
     image: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=600&q=80',
-    valueTag: 'Valor: US$19 (Gratis)',
+    valueTag: 'Valor: US$19,00',
+    originalPrice: 'US$19,00',
   },
   {
     id: 2,
@@ -58,7 +59,8 @@ export const BONUSES_DATA: BonusItem[] = [
     description: 'Una colección adicional de ejercicios para trabajar diferentes situaciones de tiro.',
     tag: 'Precisión & Mecánica',
     image: 'https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?auto=format&fit=crop&w=600&q=80',
-    valueTag: 'Valor: US$24 (Gratis)',
+    valueTag: 'Valor: US$24,00',
+    originalPrice: 'US$24,00',
   },
   {
     id: 3,
@@ -67,7 +69,8 @@ export const BONUSES_DATA: BonusItem[] = [
     description: 'Material adicional dedicado al manejo y control del balón.',
     tag: 'Dribbling & Control',
     image: 'https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=600&q=80',
-    valueTag: 'Valor: US$17 (Gratis)',
+    valueTag: 'Valor: US$17,00',
+    originalPrice: 'US$17,00',
   },
   {
     id: 4,
@@ -76,7 +79,8 @@ export const BONUSES_DATA: BonusItem[] = [
     description: 'Material para trabajar diferentes aspectos técnicos y tácticos del juego.',
     tag: 'Técnica & Visión',
     image: 'https://images.unsplash.com/photo-1515523110800-9415d13b84a8?auto=format&fit=crop&w=600&q=80',
-    valueTag: 'Valor: US$22 (Gratis)',
+    valueTag: 'Valor: US$22,00',
+    originalPrice: 'US$22,00',
   },
   {
     id: 5,
@@ -85,7 +89,8 @@ export const BONUSES_DATA: BonusItem[] = [
     description: 'Una colección adicional de ejercicios para trabajar estas diferentes situaciones del juego.',
     tag: 'Fundamentos Clave',
     image: 'https://images.unsplash.com/photo-1505666287802-931dc83948e9?auto=format&fit=crop&w=600&q=80',
-    valueTag: 'Valor: US$19 (Gratis)',
+    valueTag: 'Valor: US$19,00',
+    originalPrice: 'US$19,00',
   },
   {
     id: 6,
@@ -94,7 +99,8 @@ export const BONUSES_DATA: BonusItem[] = [
     description: 'Material adicional pensado para ayudar a organizar y preparar entrenamientos.',
     tag: 'Metodología & Planificación',
     image: 'https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?auto=format&fit=crop&w=600&q=80',
-    valueTag: 'Valor: US$25 (Gratis)',
+    valueTag: 'Valor: US$25,00',
+    originalPrice: 'US$25,00',
   },
   {
     id: 7,
@@ -103,7 +109,8 @@ export const BONUSES_DATA: BonusItem[] = [
     description: 'Accede a lecciones en video relacionadas con el entrenamiento de baloncesto.',
     tag: 'Formato Audiovisual',
     image: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=600&q=80',
-    valueTag: 'Valor: US$29 (Gratis)',
+    valueTag: 'Valor: US$29,00',
+    originalPrice: 'US$29,00',
   },
 ];
 
@@ -152,7 +159,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     role: 'Jugador & Entrenador Base',
     text: '“Me encantó tener tantos ejercicios reunidos en un solo lugar. Ahora tengo muchas más ideas para variar mis entrenamientos.”',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&h=300&q=80',
+    avatar: 'https://i.ibb.co/nNrJx7Ym/1-19082024mf14-39510599.webp',
     highlight: 'Variedad de ejercicios',
   },
   {
@@ -161,7 +168,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     role: 'Entrenador de Club',
     text: '“La variedad de ejercicios me ayudó a organizar mejor mis sesiones y dejar de repetir siempre las mismas rutinas.”',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80',
+    avatar: 'https://i.ibb.co/Dgkd8QX9/images111.jpg',
     highlight: 'Organización de sesiones',
   },
   {
@@ -170,7 +177,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     role: 'Jugador Amateur',
     text: '“Es muy práctico para consultar cuando necesito nuevas ideas para entrenar.”',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&h=200&q=80',
+    avatar: 'https://i.ibb.co/QvryJ91m/images444.jpg',
     highlight: 'Práctico y directo',
   },
 ];

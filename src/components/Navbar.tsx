@@ -38,7 +38,7 @@ export const Navbar: React.FC = () => {
           <a
             href={CHECKOUT_URL}
             id="nav-checkout-btn"
-            className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold text-black bg-[#ff5500] hover:bg-[#ff6a1a] active:scale-95 transition-all shadow-lg shadow-orange-500/25 tracking-wide uppercase font-heading hover:shadow-orange-500/40"
+            className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold text-black bg-emerald-500 hover:bg-emerald-400 active:scale-95 transition-all shadow-lg shadow-emerald-950/40 tracking-wide uppercase font-heading"
           >
             <Zap className="w-4 h-4 fill-black" />
             <span>ACCEDER POR {PRICE_TEXT}</span>

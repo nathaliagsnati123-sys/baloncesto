@@ -6,6 +6,7 @@ export interface BonusItem {
   tag: string;
   image: string;
   valueTag: string;
+  originalPrice: string;
 }
 
 export interface BenefitItem {

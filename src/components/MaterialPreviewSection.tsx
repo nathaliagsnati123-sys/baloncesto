@@ -25,21 +25,21 @@ export const MaterialPreviewSection: React.FC = () => {
   const activeSlide = PREVIEW_CAROUSEL_SLIDES[currentIndex];
 
   return (
-    <section id="muestra" className="relative py-20 bg-[#09090b] border-t border-zinc-800/80 overflow-hidden">
+    <section id="muestra" className="relative py-10 sm:py-14 bg-[#09090b] border-t border-zinc-800/80 overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 space-y-2">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-orange-400 text-xs font-semibold uppercase tracking-wider">
             <Eye className="w-3.5 h-3.5" />
             VISTA PREVIA VISUAL
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white uppercase font-heading tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white uppercase font-heading tracking-tight">
             MIRA LO QUE TE ESPERA
           </h2>
 
-          <p className="text-base sm:text-lg text-zinc-400 font-normal leading-relaxed">
+          <p className="text-sm sm:text-base text-zinc-400 font-normal leading-relaxed">
             Descubre algunas imágenes y ejemplos del contenido que encontrarás al acceder.
           </p>
         </div>
@@ -48,7 +48,7 @@ export const MaterialPreviewSection: React.FC = () => {
         <div className="relative rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-xl">
           
           {/* Main Slide Display Area */}
-          <div className="relative h-[360px] sm:h-[440px] md:h-[480px] w-full overflow-hidden">
+          <div className="relative h-[290px] sm:h-[360px] md:h-[400px] w-full overflow-hidden">
             <img
               key={activeSlide.id}
               src={activeSlide.image}
@@ -62,8 +62,8 @@ export const MaterialPreviewSection: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-[#09090b]/80 via-transparent to-transparent hidden md:block" />
 
             {/* Slide Information Box */}
-            <div className="absolute bottom-0 inset-x-0 p-6 sm:p-8 md:max-w-xl flex flex-col justify-end text-left">
-              <div className="flex items-center gap-2 mb-2">
+            <div className="absolute bottom-0 inset-x-0 p-4 sm:p-6 md:max-w-xl flex flex-col justify-end text-left">
+              <div className="flex items-center gap-2 mb-1.5">
                 <span className="px-2.5 py-0.5 rounded-md bg-[#ff5500] text-black text-[11px] font-bold uppercase font-heading tracking-wider">
                   EJEMPLO 0{activeSlide.id} / 0{totalSlides}
                 </span>
@@ -72,7 +72,7 @@ export const MaterialPreviewSection: React.FC = () => {
                 </span>
               </div>
 
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white uppercase font-heading tracking-wide mb-1.5">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-extrabold text-white uppercase font-heading tracking-wide mb-1">
                 {activeSlide.title}
               </h3>
 

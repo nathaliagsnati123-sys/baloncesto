@@ -40,7 +40,7 @@ export const StickyMobileCta: React.FC = () => {
         <a
           href={CHECKOUT_URL}
           id="sticky-bar-checkout-btn"
-          className="w-full sm:w-auto flex-1 sm:flex-initial flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#ff5500] hover:bg-[#ff661a] active:scale-95 text-black font-heading font-extrabold uppercase text-sm tracking-wider shadow-md transition-all"
+          className="w-full sm:w-auto flex-1 sm:flex-initial flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 active:scale-95 text-black font-heading font-extrabold uppercase text-sm tracking-wider shadow-lg shadow-emerald-950/40 transition-all"
         >
           <span>ACCEDER POR {PRICE_TEXT} 🏀</span>
           <Zap className="w-4 h-4 fill-black" />

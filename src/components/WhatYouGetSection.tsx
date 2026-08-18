@@ -1,6 +1,5 @@
 import React from 'react';
-import { Flame, Layers, Sparkles, Target, Zap } from 'lucide-react';
-import { CHECKOUT_URL, PRICE_TEXT } from '../data/salesData';
+import { Target } from 'lucide-react';
 
 interface VisualItem {
   title: string;
@@ -57,35 +56,31 @@ const VISUAL_GALLERY: VisualItem[] = [
 
 export const WhatYouGetSection: React.FC = () => {
   return (
-    <section className="relative py-20 bg-[#09090b] border-t border-zinc-800/80 overflow-hidden">
+    <section className="relative py-10 sm:py-14 bg-[#09090b] border-t border-zinc-800/80 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 space-y-2">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-orange-400 text-xs font-semibold uppercase tracking-wider">
             <Target className="w-3.5 h-3.5" />
             CONTENIDO INTEGRAL EN PISTA
           </div>
           
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white uppercase font-heading tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white uppercase font-heading tracking-tight leading-tight">
             TODO LO QUE <span className="text-[#ff5500]">NECESITAS</span> PARA ENTRENAR MEJOR
           </h2>
 
-          <p className="text-base sm:text-lg text-zinc-400 font-normal leading-relaxed">
+          <p className="text-sm sm:text-base text-zinc-400 font-normal leading-relaxed">
             Imagina tener una enorme colección de ejercicios de baloncesto disponible para consultar cada vez que quieras entrenar, practicar o preparar una nueva sesión.
-          </p>
-
-          <p className="text-sm sm:text-base text-zinc-500 font-normal leading-relaxed">
-            Con + 1.000 ejercicios tendrás opciones completas para variar tus entrenamientos y evitar repetir siempre las mismas rutinas.
           </p>
         </div>
 
         {/* Visual Masonry Composition */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-3 sm:gap-4">
           {VISUAL_GALLERY.map((item, index) => (
             <div
               key={index}
-              className={`group relative rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800 hover:border-zinc-700 transition-all duration-200 ${item.span || 'col-span-1'} h-64 sm:h-72`}
+              className={`group relative rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800 hover:border-zinc-700 transition-all duration-200 ${item.span || 'col-span-1'} h-48 sm:h-56`}
             >
               {/* Image */}
               <img
@@ -121,29 +116,6 @@ export const WhatYouGetSection: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Highlight Banner */}
-        <div className="mt-12 p-6 sm:p-8 rounded-2xl bg-zinc-900/80 border border-zinc-800 text-center relative overflow-hidden">
-          <div className="relative z-10 max-w-3xl mx-auto space-y-3">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white uppercase font-heading tracking-wide">
-              + 1.000 EJERCICIOS DE BALONCESTO. UNA GRAN COLECCIÓN PARA TUS ENTRENAMIENTOS.
-            </h3>
-
-            <p className="text-sm sm:text-base text-zinc-400 max-w-xl mx-auto">
-              Todo estructurado y listo para que aproveches cada minuto en la cancha sin improvisar.
-            </p>
-
-            <div className="pt-2">
-              <a
-                href={CHECKOUT_URL}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-extrabold uppercase font-heading tracking-wider text-black bg-[#ff5500] hover:bg-[#ff661a] active:scale-95 transition-all shadow-md"
-              >
-                <span>ACCEDER A LA COLECCIÓN POR {PRICE_TEXT} 🏀</span>
-                <Zap className="w-4 h-4 fill-black" />
-              </a>
-            </div>
-          </div>
         </div>
 
       </div>

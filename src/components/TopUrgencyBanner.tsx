@@ -23,32 +23,30 @@ export const TopUrgencyBanner: React.FC = () => {
   return (
     <div
       id="top-urgency-banner"
-      className="sticky top-0 z-50 w-full bg-gradient-to-r from-red-700 via-red-600 to-red-700 text-white shadow-lg shadow-red-950/40 border-b border-red-500/60 py-2 px-3"
+      className="sticky top-0 z-50 w-full bg-gradient-to-r from-red-700 via-red-600 to-red-700 text-white shadow-md shadow-red-950/30 border-b border-red-500/40 py-1 sm:py-1.5 px-3"
     >
-      <div className="max-w-6xl mx-auto flex items-center justify-center gap-3 text-center flex-wrap">
+      <div className="max-w-6xl mx-auto flex items-center justify-center gap-2 sm:gap-3 text-center">
         {/* Urgency & Offer Message */}
-        <div className="flex items-center gap-2">
-          <span className="flex items-center justify-center w-5 h-5 rounded-full bg-black/25 text-white animate-pulse">
-            <Flame className="w-3.5 h-3.5 fill-white text-white" />
-          </span>
-          <span className="text-xs font-black uppercase tracking-wider text-white font-heading drop-shadow-sm whitespace-nowrap">
+        <div className="flex items-center gap-1.5">
+          <Flame className="w-3.5 h-3.5 fill-white text-white animate-pulse" />
+          <span className="text-[11px] sm:text-xs font-black uppercase tracking-wider text-white font-heading whitespace-nowrap">
             OFERTA POR TIEMPO LIMITADO
           </span>
         </div>
 
         {/* Live Countdown Timer */}
-        <div className="flex items-center gap-1.5 bg-black/40 border border-white/20 rounded-lg px-2.5 py-1 text-white shadow-inner">
-          <Clock className="w-3.5 h-3.5 text-red-200" />
-          <div className="flex items-center gap-1 font-mono font-black text-xs text-white">
-            <span className="bg-black/60 px-1.5 py-0.5 rounded text-white border border-white/10">
+        <div className="flex items-center gap-1 bg-black/35 border border-white/20 rounded px-2 py-0.5 text-white">
+          <Clock className="w-3 h-3 text-red-200" />
+          <div className="flex items-center gap-0.5 font-mono font-bold text-[11px] sm:text-xs text-white">
+            <span className="bg-black/50 px-1 py-0.2 rounded text-white">
               {formattedHours}
             </span>
             <span className="text-red-200 animate-pulse">:</span>
-            <span className="bg-black/60 px-1.5 py-0.5 rounded text-white border border-white/10">
+            <span className="bg-black/50 px-1 py-0.2 rounded text-white">
               {formattedMinutes}
             </span>
             <span className="text-red-200 animate-pulse">:</span>
-            <span className="bg-black/60 px-1.5 py-0.5 rounded text-white border border-white/10">
+            <span className="bg-black/50 px-1 py-0.2 rounded text-white">
               {formattedSeconds}
             </span>
           </div>

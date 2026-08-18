@@ -45,7 +45,7 @@ export const FinalCtaSection: React.FC = () => {
           <a
             href={CHECKOUT_URL}
             id="final-cta-btn"
-            className="group w-full flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl text-base sm:text-lg font-extrabold uppercase font-heading tracking-wide text-black bg-[#ff5500] hover:bg-[#ff661a] active:scale-[0.98] transition-all shadow-md"
+            className="group w-full flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl text-base sm:text-lg font-extrabold uppercase font-heading tracking-wide text-black bg-emerald-500 hover:bg-emerald-400 active:scale-[0.98] transition-all shadow-lg shadow-emerald-950/50"
           >
             <span>QUIERO LOS + 1.000 EJERCICIOS 🏀</span>
             <Zap className="w-5 h-5 fill-black group-hover:translate-x-0.5 transition-transform" />
