@@ -18,6 +18,16 @@ import {
 } from 'lucide-react';
 import { BONUSES_DATA } from '../data/salesData';
 
+const BONUS_IMAGES: Record<number, string> = {
+  1: 'https://i.ibb.co/WpckMqCV/Chat-GPT-Image-20-de-ago-de-2026-11-47-13.png',
+  2: 'https://i.ibb.co/wrJyQxvs/Chat-GPT-Image-20-de-ago-de-2026-12-39-03.png',
+  3: 'https://i.ibb.co/nN4sbbWq/Chat-GPT-Image-20-de-ago-de-2026-12-40-31.png',
+  4: 'https://i.ibb.co/JR2h4Hc0/Chat-GPT-Image-20-de-ago-de-2026-12-44-16.png',
+  5: 'https://i.ibb.co/Tx3SRcXm/Chat-GPT-Image-20-de-ago-de-2026-12-45-44.png',
+  6: 'https://i.ibb.co/WNJY1wSj/Chat-GPT-Image-20-de-ago-de-2026-12-51-12.png',
+  7: 'https://i.ibb.co/QLNB1zb/Chat-GPT-Image-20-de-ago-de-2026-13-01-39.png',
+};
+
 const BONUS_ICONS: Record<number, React.ReactNode> = {
   1: <Swords className="w-8 h-8 text-[#ff5500]" />,
   2: <Crosshair className="w-8 h-8 text-[#ff5500]" />,
@@ -79,20 +89,36 @@ export const BonusesSection: React.FC = () => {
                   </span>
                 </div>
 
-                {/* Prominent Bonus Icon Box */}
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-11 h-11 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center shrink-0 group-hover:bg-orange-500/20 group-hover:scale-105 transition-all">
-                    {BONUS_ICONS[bonus.number] || <Sparkles className="w-6 h-6 text-[#ff5500]" />}
-                  </div>
-                  <div>
-                    <span className="inline-block px-2 py-0.5 rounded bg-zinc-800 text-[10px] font-semibold text-orange-400 uppercase tracking-wider mb-0.5">
-                      {bonus.tag}
-                    </span>
-                    <div className="text-[11px] text-zinc-400 font-medium">
-                      Material Complementario
+                {/* Bonus Visual Display: Custom Image for Bonuses with cover or Icon Box for others */}
+                {BONUS_IMAGES[bonus.number] ? (
+                  <div className="space-y-3 mb-3.5">
+                    <div className="relative rounded-xl overflow-hidden border border-orange-500/30 bg-zinc-950/90 shadow-lg group-hover:border-orange-500/60 transition-all duration-300">
+                      <img
+                        src={BONUS_IMAGES[bonus.number]}
+                        alt={bonus.title}
+                        className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-300 filter contrast-[1.02] brightness-[1.02]"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/85 backdrop-blur-sm text-[10px] font-bold text-orange-400 uppercase tracking-wider border border-zinc-800">
+                        {bonus.tag}
+                      </div>
                     </div>
                   </div>
-                </div>
+                ) : (
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-11 h-11 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center shrink-0 group-hover:bg-orange-500/20 group-hover:scale-105 transition-all">
+                      {BONUS_ICONS[bonus.number] || <Sparkles className="w-6 h-6 text-[#ff5500]" />}
+                    </div>
+                    <div>
+                      <span className="inline-block px-2 py-0.5 rounded bg-zinc-800 text-[10px] font-semibold text-orange-400 uppercase tracking-wider mb-0.5">
+                        {bonus.tag}
+                      </span>
+                      <div className="text-[11px] text-zinc-400 font-medium">
+                        Material Complementario
+                      </div>
+                    </div>
+                  </div>
+                )}
 
                 {/* Bonus Title & Description */}
                 <div className="space-y-1.5">
