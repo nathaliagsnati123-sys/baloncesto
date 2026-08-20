@@ -13,7 +13,7 @@ const VISUAL_GALLERY: VisualItem[] = [
   {
     title: 'Entrenamientos en Grupo & Táctica',
     subtitle: 'Dinámicas colectivas y sistemas de juego',
-    image: 'https://i.ibb.co/wNWMZPKg/Untitled-design-5.png',
+    image: '/images/group-tactics.webp',
     badge: 'Trabajo en Equipo',
     span: 'col-span-1 md:col-span-2 lg:col-span-2',
   },

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { 
   Award, 
   BookOpen, 
@@ -19,13 +19,13 @@ import {
 import { BONUSES_DATA } from '../data/salesData';
 
 const BONUS_IMAGES: Record<number, string> = {
-  1: 'https://i.ibb.co/WpckMqCV/Chat-GPT-Image-20-de-ago-de-2026-11-47-13.png',
-  2: 'https://i.ibb.co/wrJyQxvs/Chat-GPT-Image-20-de-ago-de-2026-12-39-03.png',
-  3: 'https://i.ibb.co/nN4sbbWq/Chat-GPT-Image-20-de-ago-de-2026-12-40-31.png',
-  4: 'https://i.ibb.co/JR2h4Hc0/Chat-GPT-Image-20-de-ago-de-2026-12-44-16.png',
-  5: 'https://i.ibb.co/Tx3SRcXm/Chat-GPT-Image-20-de-ago-de-2026-12-45-44.png',
-  6: 'https://i.ibb.co/WNJY1wSj/Chat-GPT-Image-20-de-ago-de-2026-12-51-12.png',
-  7: 'https://i.ibb.co/QLNB1zb/Chat-GPT-Image-20-de-ago-de-2026-13-01-39.png',
+  1: '/images/bono-1.webp',
+  2: '/images/bono-2.webp',
+  3: '/images/bono-3.webp',
+  4: '/images/bono-4.webp',
+  5: '/images/bono-5.webp',
+  6: '/images/bono-6.webp',
+  7: '/images/bono-7.webp',
 };
 
 const BONUS_ICONS: Record<number, React.ReactNode> = {
@@ -45,27 +45,15 @@ interface BonusImageItemProps {
 }
 
 const BonusImageItem: React.FC<BonusImageItemProps> = ({ src, alt, tag }) => {
-  const [loaded, setLoaded] = useState(false);
-
   return (
     <div className="space-y-3 mb-3.5">
       <div className="relative rounded-xl overflow-hidden border border-orange-500/30 bg-zinc-950 shadow-lg group-hover:border-orange-500/60 transition-all duration-300">
-        {/* Placeholder Skeleton shimmer while image is loading */}
-        {!loaded && (
-          <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-800/80 to-zinc-900 animate-pulse flex items-center justify-center">
-            <span className="text-[10px] text-zinc-600 font-medium uppercase tracking-wider">Cargando...</span>
-          </div>
-        )}
         <img
           src={src}
           alt={alt}
-          loading="lazy"
+          loading="eager"
           decoding="async"
-          onLoad={() => setLoaded(true)}
-          className={`w-full aspect-square object-cover group-hover:scale-105 transition-all duration-300 filter contrast-[1.02] brightness-[1.02] ${
-            loaded ? 'opacity-100' : 'opacity-0'
-          }`}
-          referrerPolicy="no-referrer"
+          className="w-full aspect-square object-cover group-hover:scale-105 transition-all duration-300 filter contrast-[1.02] brightness-[1.02]"
         />
         <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/85 backdrop-blur-sm text-[10px] font-bold text-orange-400 uppercase tracking-wider border border-zinc-800 z-10">
           {tag}

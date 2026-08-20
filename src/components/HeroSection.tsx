@@ -45,12 +45,11 @@ export const HeroSection: React.FC = () => {
           {/* Image Container Card */}
           <div className="relative rounded-2xl overflow-hidden bg-zinc-900/90 border border-zinc-800 shadow-2xl shadow-black/80 transition-transform duration-300 group-hover:scale-[1.01]">
             <img
-              src="https://i.ibb.co/FSktNLw/Gemini-Generated-Image-ffq83tffq83tffq8.jpg"
+              src="/images/hero.webp"
               alt="Colección +1.000 Ejercicios de Baloncesto"
               fetchPriority="high"
               decoding="async"
               className="w-full h-auto max-h-[340px] sm:max-h-[420px] md:max-h-[480px] lg:max-h-[520px] object-contain mx-auto filter contrast-[1.03] brightness-[1.02]"
-              referrerPolicy="no-referrer"
             />
           </div>
         </div>
