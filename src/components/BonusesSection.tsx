@@ -18,14 +18,14 @@ import {
 } from 'lucide-react';
 import { BONUSES_DATA } from '../data/salesData';
 
-const BONUS_IMAGES: Record<number, string> = {
-  1: '/images/bono-1.webp',
-  2: '/images/bono-2.webp',
-  3: '/images/bono-3.webp',
-  4: '/images/bono-4.webp',
-  5: '/images/bono-5.webp',
-  6: '/images/bono-6.webp',
-  7: '/images/bono-7.webp',
+const BONUS_IMAGES: Record<number, { full: string; sm: string }> = {
+  1: { full: '/images/bono-1.webp', sm: '/images/bono-1-sm.webp' },
+  2: { full: '/images/bono-2.webp', sm: '/images/bono-2-sm.webp' },
+  3: { full: '/images/bono-3.webp', sm: '/images/bono-3-sm.webp' },
+  4: { full: '/images/bono-4.webp', sm: '/images/bono-4-sm.webp' },
+  5: { full: '/images/bono-5.webp', sm: '/images/bono-5-sm.webp' },
+  6: { full: '/images/bono-6.webp', sm: '/images/bono-6-sm.webp' },
+  7: { full: '/images/bono-7.webp', sm: '/images/bono-7-sm.webp' },
 };
 
 const BONUS_ICONS: Record<number, React.ReactNode> = {
@@ -39,17 +39,19 @@ const BONUS_ICONS: Record<number, React.ReactNode> = {
 };
 
 interface BonusImageItemProps {
-  src: string;
+  imgData: { full: string; sm: string };
   alt: string;
   tag: string;
 }
 
-const BonusImageItem: React.FC<BonusImageItemProps> = ({ src, alt, tag }) => {
+const BonusImageItem: React.FC<BonusImageItemProps> = ({ imgData, alt, tag }) => {
   return (
     <div className="space-y-3 mb-3.5">
       <div className="relative rounded-xl overflow-hidden border border-orange-500/30 bg-zinc-950 shadow-lg group-hover:border-orange-500/60 transition-all duration-300">
         <img
-          src={src}
+          src={imgData.sm}
+          srcSet={`${imgData.sm} 360w, ${imgData.full} 600w`}
+          sizes="(max-width: 640px) 360px, 300px"
           alt={alt}
           loading="eager"
           decoding="async"
@@ -64,12 +66,13 @@ const BonusImageItem: React.FC<BonusImageItemProps> = ({ src, alt, tag }) => {
 };
 
 export const BonusesSection: React.FC = () => {
-  // Preload all bonus images in the background on initial load
+  // Preload bonus images in the background on initial load
   useEffect(() => {
-    Object.values(BONUS_IMAGES).forEach((url) => {
+    const isMobile = window.innerWidth <= 640;
+    Object.values(BONUS_IMAGES).forEach((imgObj) => {
       const img = new Image();
       img.decoding = 'async';
-      img.src = url;
+      img.src = isMobile ? imgObj.sm : imgObj.full;
     });
   }, []);
 
@@ -126,7 +129,7 @@ export const BonusesSection: React.FC = () => {
                 {/* Bonus Visual Display: Custom Image for Bonuses with cover or Icon Box for others */}
                 {BONUS_IMAGES[bonus.number] ? (
                   <BonusImageItem
-                    src={BONUS_IMAGES[bonus.number]}
+                    imgData={BONUS_IMAGES[bonus.number]}
                     alt={bonus.title}
                     tag={bonus.tag}
                   />

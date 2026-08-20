@@ -7,10 +7,11 @@ export const HeroSection: React.FC = () => {
       {/* Background Court Atmosphere */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <img
-          src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1920&q=80"
-          alt="Baloncesto entrenamiento en cancha"
+          src="/images/benefit-1-sm.webp"
+          alt=""
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover object-center opacity-10 filter grayscale contrast-125"
-          referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#09090b]/90 via-[#09090b]/95 to-[#09090b]" />
       </div>
@@ -45,7 +46,9 @@ export const HeroSection: React.FC = () => {
           {/* Image Container Card */}
           <div className="relative rounded-2xl overflow-hidden bg-zinc-900/90 border border-zinc-800 shadow-2xl shadow-black/80 transition-transform duration-300 group-hover:scale-[1.01]">
             <img
-              src="/images/hero.webp"
+              src="/images/hero-sm.webp"
+              srcSet="/images/hero-sm.webp 420w, /images/hero.webp 640w"
+              sizes="(max-width: 640px) 420px, 640px"
               alt="Colección +1.000 Ejercicios de Baloncesto"
               fetchPriority="high"
               decoding="async"

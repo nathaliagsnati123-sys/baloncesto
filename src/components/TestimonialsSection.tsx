@@ -68,7 +68,6 @@ export const TestimonialsSection: React.FC = () => {
                   width="40"
                   height="40"
                   className="w-10 h-10 rounded-full object-cover border border-zinc-700"
-                  referrerPolicy="no-referrer"
                 />
                 <div>
                   <div className="font-heading font-bold text-white text-base tracking-wide group-hover:text-orange-400 transition-colors">
