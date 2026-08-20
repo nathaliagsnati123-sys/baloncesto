@@ -1,7 +1,6 @@
 import React from 'react';
-import { Flame, Zap } from 'lucide-react';
+import { Award, CheckCircle2, Flame, Layers, ShieldCheck, Sparkles, Zap } from 'lucide-react';
 import { CHECKOUT_URL, PRICE_TEXT } from '../data/salesData';
-import { IMAGES } from '../assets/images';
 
 export const OfferSection: React.FC = () => {
   return (
@@ -26,19 +25,34 @@ export const OfferSection: React.FC = () => {
 
         {/* Clean Pricing Card */}
         <div className="p-5 sm:p-6 rounded-2xl bg-zinc-900/90 border border-zinc-800 shadow-xl max-w-md mx-auto">
-          <div className="text-xs font-bold text-orange-400 uppercase tracking-wider mb-2">
+          <div className="text-xs font-bold text-orange-400 uppercase tracking-wider mb-3">
             ACCESO COMPLETO E INMEDIATO
           </div>
 
-          {/* Bundle Showcase Image */}
-          <div className="relative my-2.5 rounded-xl overflow-hidden bg-zinc-950/70 border border-zinc-800/90 p-2 shadow-inner">
-            <img
-              src={IMAGES.hero.jpg}
-              alt="Colección +1.000 Ejercicios de Baloncesto"
-              loading="lazy"
-              decoding="async"
-              className="w-full h-auto max-h-[220px] sm:max-h-[260px] object-contain mx-auto filter contrast-[1.03] brightness-[1.02]"
-            />
+          {/* Bundle Feature Highlight Box */}
+          <div className="my-3 rounded-xl bg-black/60 border border-orange-500/30 p-4 text-left space-y-2.5">
+            <div className="flex items-center gap-2 text-xs font-bold text-white font-heading uppercase">
+              <Sparkles className="w-4 h-4 text-orange-400 shrink-0" />
+              <span>TODO EL PACK INCLUIDO:</span>
+            </div>
+            <div className="space-y-1.5 text-xs text-zinc-300">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <span>+ 1.000 Ejercicios & Diagramas Tácticos</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <span>7 Bonos de Especialización Exclusivos</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <span>Acceso de por vida en celular, tablet y PC</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <span>Garantía incondicional de satisfacción 7 días</span>
+              </div>
+            </div>
           </div>
 
           {/* Price Anchoring */}
@@ -72,3 +86,4 @@ export const OfferSection: React.FC = () => {
     </section>
   );
 };
+

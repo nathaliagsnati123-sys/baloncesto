@@ -60,15 +60,9 @@ export const TestimonialsSection: React.FC = () => {
 
               {/* Author Info */}
               <div className="pt-4 border-t border-zinc-800/80 flex items-center gap-3">
-                <img
-                  src={item.avatar}
-                  alt={item.name}
-                  loading="lazy"
-                  decoding="async"
-                  width="40"
-                  height="40"
-                  className="w-10 h-10 rounded-full object-cover border border-zinc-700"
-                />
+                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-orange-600 to-amber-500 border border-orange-400/40 flex items-center justify-center text-black font-extrabold font-heading text-sm shadow-md shrink-0">
+                  {item.name.charAt(0)}
+                </div>
                 <div>
                   <div className="font-heading font-bold text-white text-base tracking-wide group-hover:text-orange-400 transition-colors">
                     {item.name}
