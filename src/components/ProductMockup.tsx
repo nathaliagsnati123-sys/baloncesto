@@ -45,6 +45,9 @@ export const ProductMockup: React.FC<ProductMockupProps> = ({ className = '', si
                   alt="Jugador de baloncesto entrenando"
                   loading="lazy"
                   decoding="async"
+                  onError={(e) => {
+                    e.currentTarget.src = '/images/benefit-1-sm.jpg';
+                  }}
                   className="w-full h-full object-cover object-center filter contrast-110 brightness-95"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-black/30 to-transparent" />

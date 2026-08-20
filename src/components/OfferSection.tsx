@@ -38,6 +38,11 @@ export const OfferSection: React.FC = () => {
               alt="Colección +1.000 Ejercicios de Baloncesto"
               loading="lazy"
               decoding="async"
+              onError={(e) => {
+                const target = e.currentTarget;
+                target.srcset = '';
+                target.src = '/images/hero-sm.jpg';
+              }}
               className="w-full h-auto max-h-[220px] sm:max-h-[260px] object-contain mx-auto filter contrast-[1.03] brightness-[1.02]"
             />
           </div>

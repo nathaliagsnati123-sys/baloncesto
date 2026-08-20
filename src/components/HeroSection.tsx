@@ -11,6 +11,9 @@ export const HeroSection: React.FC = () => {
           alt=""
           loading="lazy"
           decoding="async"
+          onError={(e) => {
+            e.currentTarget.src = '/images/benefit-1.jpg';
+          }}
           className="w-full h-full object-cover object-center opacity-10 filter grayscale contrast-125"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#09090b]/90 via-[#09090b]/95 to-[#09090b]" />
@@ -52,6 +55,11 @@ export const HeroSection: React.FC = () => {
               alt="Colección +1.000 Ejercicios de Baloncesto"
               fetchPriority="high"
               decoding="async"
+              onError={(e) => {
+                const target = e.currentTarget;
+                target.srcset = '';
+                target.src = '/images/hero-sm.jpg';
+              }}
               className="w-full h-auto max-h-[340px] sm:max-h-[420px] md:max-h-[480px] lg:max-h-[520px] object-contain mx-auto filter contrast-[1.03] brightness-[1.02]"
             />
           </div>

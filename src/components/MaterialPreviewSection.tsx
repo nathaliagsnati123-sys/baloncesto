@@ -55,8 +55,11 @@ export const MaterialPreviewSection: React.FC = () => {
               alt={activeSlide.title}
               loading="lazy"
               decoding="async"
+              onError={(e) => {
+                const target = e.currentTarget;
+                target.src = activeSlide.image.replace('.webp', '.jpg');
+              }}
               className="w-full h-full object-cover object-center filter brightness-90 contrast-105 transition-all duration-500 ease-out"
-              referrerPolicy="no-referrer"
             />
 
             {/* Gradient Overlays */}

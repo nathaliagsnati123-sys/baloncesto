@@ -48,6 +48,11 @@ export const BenefitsSection: React.FC = () => {
                     alt={item.title}
                     loading="lazy"
                     decoding="async"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      target.srcset = '';
+                      target.src = item.image.replace('.webp', '-sm.jpg');
+                    }}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90 contrast-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-transparent to-zinc-900" />
@@ -88,6 +93,11 @@ export const BenefitsSection: React.FC = () => {
                     alt={item.title}
                     loading="lazy"
                     decoding="async"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      target.srcset = '';
+                      target.src = item.image.replace('.webp', '-sm.jpg');
+                    }}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-transparent to-transparent" />

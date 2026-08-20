@@ -55,6 +55,11 @@ const BonusImageItem: React.FC<BonusImageItemProps> = ({ imgData, alt, tag }) =>
           alt={alt}
           loading="eager"
           decoding="async"
+          onError={(e) => {
+            const target = e.currentTarget;
+            target.srcset = '';
+            target.src = imgData.sm.replace('.webp', '.jpg');
+          }}
           className="w-full aspect-square object-cover group-hover:scale-105 transition-all duration-300 filter contrast-[1.02] brightness-[1.02]"
         />
         <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/85 backdrop-blur-sm text-[10px] font-bold text-orange-400 uppercase tracking-wider border border-zinc-800 z-10">

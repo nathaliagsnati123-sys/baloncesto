@@ -65,6 +65,9 @@ export const TestimonialsSection: React.FC = () => {
                   alt={item.name}
                   loading="lazy"
                   decoding="async"
+                  onError={(e) => {
+                    e.currentTarget.src = item.avatar.replace('.webp', '.jpg');
+                  }}
                   width="40"
                   height="40"
                   className="w-10 h-10 rounded-full object-cover border border-zinc-700"

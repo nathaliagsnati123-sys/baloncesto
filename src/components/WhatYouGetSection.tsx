@@ -88,8 +88,11 @@ export const WhatYouGetSection: React.FC = () => {
                 alt={item.title}
                 loading="lazy"
                 decoding="async"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  target.src = item.image.replace('.webp', '.jpg');
+                }}
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 filter brightness-90 contrast-105"
-                referrerPolicy="no-referrer"
               />
 
               {/* Gradient Dark Overlay */}
