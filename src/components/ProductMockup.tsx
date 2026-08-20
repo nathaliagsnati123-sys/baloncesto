@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, Flame, PlayCircle, Sparkles } from 'lucide-react';
+import { IMAGES } from '../assets/images';
 
 interface ProductMockupProps {
   className?: string;
@@ -43,14 +44,14 @@ export const ProductMockup: React.FC<ProductMockupProps> = ({ className = '', si
                 <picture>
                   <source
                     type="image/webp"
-                    srcSet="/images/benefit-1-sm.webp"
+                    srcSet={IMAGES.benefits[1].webpSm}
                   />
                   <source
                     type="image/jpeg"
-                    srcSet="/images/benefit-1-sm.jpg"
+                    srcSet={IMAGES.benefits[1].jpgSm}
                   />
                   <img
-                    src="/images/benefit-1-sm.jpg"
+                    src={IMAGES.benefits[1].jpgSm}
                     alt="Jugador de baloncesto entrenando"
                     loading="lazy"
                     decoding="async"

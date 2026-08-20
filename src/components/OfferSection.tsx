@@ -1,6 +1,7 @@
 import React from 'react';
 import { Flame, Zap } from 'lucide-react';
 import { CHECKOUT_URL, PRICE_TEXT } from '../data/salesData';
+import { IMAGES } from '../assets/images';
 
 export const OfferSection: React.FC = () => {
   return (
@@ -34,16 +35,16 @@ export const OfferSection: React.FC = () => {
             <picture>
               <source
                 type="image/webp"
-                srcSet="/images/hero-sm.webp 420w, /images/hero.webp 640w"
+                srcSet={`${IMAGES.hero.webpSm} 420w, ${IMAGES.hero.webp} 640w`}
                 sizes="(max-width: 640px) 360px, 420px"
               />
               <source
                 type="image/jpeg"
-                srcSet="/images/hero-sm.jpg 420w, /images/hero.jpg 640w"
+                srcSet={`${IMAGES.hero.jpgSm} 420w, ${IMAGES.hero.jpg} 640w`}
                 sizes="(max-width: 640px) 360px, 420px"
               />
               <img
-                src="/images/hero-sm.jpg"
+                src={IMAGES.hero.jpgSm}
                 alt="Colección +1.000 Ejercicios de Baloncesto"
                 loading="lazy"
                 decoding="async"

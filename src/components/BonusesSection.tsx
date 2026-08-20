@@ -17,15 +17,16 @@ import {
   Zap 
 } from 'lucide-react';
 import { BONUSES_DATA } from '../data/salesData';
+import { IMAGES } from '../assets/images';
 
 const BONUS_IMAGES: Record<number, { full: string; sm: string; fullJpg: string; smJpg: string }> = {
-  1: { full: '/images/bono-1.webp', sm: '/images/bono-1-sm.webp', fullJpg: '/images/bono-1.jpg', smJpg: '/images/bono-1-sm.jpg' },
-  2: { full: '/images/bono-2.webp', sm: '/images/bono-2-sm.webp', fullJpg: '/images/bono-2.jpg', smJpg: '/images/bono-2-sm.jpg' },
-  3: { full: '/images/bono-3.webp', sm: '/images/bono-3-sm.webp', fullJpg: '/images/bono-3.jpg', smJpg: '/images/bono-3-sm.jpg' },
-  4: { full: '/images/bono-4.webp', sm: '/images/bono-4-sm.webp', fullJpg: '/images/bono-4.jpg', smJpg: '/images/bono-4-sm.jpg' },
-  5: { full: '/images/bono-5.webp', sm: '/images/bono-5-sm.webp', fullJpg: '/images/bono-5.jpg', smJpg: '/images/bono-5-sm.jpg' },
-  6: { full: '/images/bono-6.webp', sm: '/images/bono-6-sm.webp', fullJpg: '/images/bono-6.jpg', smJpg: '/images/bono-6-sm.jpg' },
-  7: { full: '/images/bono-7.webp', sm: '/images/bono-7-sm.webp', fullJpg: '/images/bono-7.jpg', smJpg: '/images/bono-7-sm.jpg' },
+  1: { full: IMAGES.bonuses[1].webp, sm: IMAGES.bonuses[1].webpSm, fullJpg: IMAGES.bonuses[1].jpg, smJpg: IMAGES.bonuses[1].jpgSm },
+  2: { full: IMAGES.bonuses[2].webp, sm: IMAGES.bonuses[2].webpSm, fullJpg: IMAGES.bonuses[2].jpg, smJpg: IMAGES.bonuses[2].jpgSm },
+  3: { full: IMAGES.bonuses[3].webp, sm: IMAGES.bonuses[3].webpSm, fullJpg: IMAGES.bonuses[3].jpg, smJpg: IMAGES.bonuses[3].jpgSm },
+  4: { full: IMAGES.bonuses[4].webp, sm: IMAGES.bonuses[4].webpSm, fullJpg: IMAGES.bonuses[4].jpg, smJpg: IMAGES.bonuses[4].jpgSm },
+  5: { full: IMAGES.bonuses[5].webp, sm: IMAGES.bonuses[5].webpSm, fullJpg: IMAGES.bonuses[5].jpg, smJpg: IMAGES.bonuses[5].jpgSm },
+  6: { full: IMAGES.bonuses[6].webp, sm: IMAGES.bonuses[6].webpSm, fullJpg: IMAGES.bonuses[6].jpg, smJpg: IMAGES.bonuses[6].jpgSm },
+  7: { full: IMAGES.bonuses[7].webp, sm: IMAGES.bonuses[7].webpSm, fullJpg: IMAGES.bonuses[7].jpg, smJpg: IMAGES.bonuses[7].jpgSm },
 };
 
 const BONUS_ICONS: Record<number, React.ReactNode> = {

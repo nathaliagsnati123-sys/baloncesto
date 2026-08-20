@@ -57,23 +57,14 @@ export const MaterialPreviewSection: React.FC = () => {
           
           {/* Main Slide Display Area */}
           <div className="relative h-[290px] sm:h-[360px] md:h-[400px] w-full overflow-hidden">
-            <picture key={activeSlide.id}>
-              <source
-                type="image/webp"
-                srcSet={activeSlide.image}
-              />
-              <source
-                type="image/jpeg"
-                srcSet={activeSlide.image.replace('.webp', '.jpg')}
-              />
-              <img
-                src={activeSlide.image.replace('.webp', '.jpg')}
-                alt={activeSlide.title}
-                loading="eager"
-                decoding="async"
-                className="w-full h-full object-cover object-center filter brightness-90 contrast-105 transition-all duration-500 ease-out"
-              />
-            </picture>
+            <img
+              key={activeSlide.id}
+              src={activeSlide.image}
+              alt={activeSlide.title}
+              loading="eager"
+              decoding="async"
+              className="w-full h-full object-cover object-center filter brightness-90 contrast-105 transition-all duration-500 ease-out"
+            />
 
             {/* Gradient Overlays */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/40 to-transparent" />

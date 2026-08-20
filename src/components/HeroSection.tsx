@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircle2 } from 'lucide-react';
+import { IMAGES } from '../assets/images';
 
 export const HeroSection: React.FC = () => {
   return (
@@ -7,10 +8,10 @@ export const HeroSection: React.FC = () => {
       {/* Background Court Atmosphere */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <picture>
-          <source type="image/webp" srcSet="/images/benefit-1-sm.webp" />
-          <source type="image/jpeg" srcSet="/images/benefit-1-sm.jpg" />
+          <source type="image/webp" srcSet={IMAGES.benefits[1].webpSm} />
+          <source type="image/jpeg" srcSet={IMAGES.benefits[1].jpgSm} />
           <img
-            src="/images/benefit-1-sm.jpg"
+            src={IMAGES.benefits[1].jpgSm}
             alt=""
             loading="lazy"
             decoding="async"
@@ -52,16 +53,16 @@ export const HeroSection: React.FC = () => {
             <picture>
               <source
                 type="image/webp"
-                srcSet="/images/hero-sm.webp 420w, /images/hero.webp 640w"
+                srcSet={`${IMAGES.hero.webpSm} 420w, ${IMAGES.hero.webp} 640w`}
                 sizes="(max-width: 640px) 420px, 640px"
               />
               <source
                 type="image/jpeg"
-                srcSet="/images/hero-sm.jpg 420w, /images/hero.jpg 640w"
+                srcSet={`${IMAGES.hero.jpgSm} 420w, ${IMAGES.hero.jpg} 640w`}
                 sizes="(max-width: 640px) 420px, 640px"
               />
               <img
-                src="/images/hero-sm.jpg"
+                src={IMAGES.hero.jpgSm}
                 alt="Colección +1.000 Ejercicios de Baloncesto"
                 loading="eager"
                 fetchPriority="high"
