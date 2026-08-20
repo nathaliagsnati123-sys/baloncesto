@@ -18,14 +18,14 @@ import {
 } from 'lucide-react';
 import { BONUSES_DATA } from '../data/salesData';
 
-const BONUS_IMAGES: Record<number, { full: string; sm: string }> = {
-  1: { full: '/images/bono-1.webp', sm: '/images/bono-1-sm.webp' },
-  2: { full: '/images/bono-2.webp', sm: '/images/bono-2-sm.webp' },
-  3: { full: '/images/bono-3.webp', sm: '/images/bono-3-sm.webp' },
-  4: { full: '/images/bono-4.webp', sm: '/images/bono-4-sm.webp' },
-  5: { full: '/images/bono-5.webp', sm: '/images/bono-5-sm.webp' },
-  6: { full: '/images/bono-6.webp', sm: '/images/bono-6-sm.webp' },
-  7: { full: '/images/bono-7.webp', sm: '/images/bono-7-sm.webp' },
+const BONUS_IMAGES: Record<number, { full: string; sm: string; fullJpg: string; smJpg: string }> = {
+  1: { full: '/images/bono-1.webp', sm: '/images/bono-1-sm.webp', fullJpg: '/images/bono-1.jpg', smJpg: '/images/bono-1-sm.jpg' },
+  2: { full: '/images/bono-2.webp', sm: '/images/bono-2-sm.webp', fullJpg: '/images/bono-2.jpg', smJpg: '/images/bono-2-sm.jpg' },
+  3: { full: '/images/bono-3.webp', sm: '/images/bono-3-sm.webp', fullJpg: '/images/bono-3.jpg', smJpg: '/images/bono-3-sm.jpg' },
+  4: { full: '/images/bono-4.webp', sm: '/images/bono-4-sm.webp', fullJpg: '/images/bono-4.jpg', smJpg: '/images/bono-4-sm.jpg' },
+  5: { full: '/images/bono-5.webp', sm: '/images/bono-5-sm.webp', fullJpg: '/images/bono-5.jpg', smJpg: '/images/bono-5-sm.jpg' },
+  6: { full: '/images/bono-6.webp', sm: '/images/bono-6-sm.webp', fullJpg: '/images/bono-6.jpg', smJpg: '/images/bono-6-sm.jpg' },
+  7: { full: '/images/bono-7.webp', sm: '/images/bono-7-sm.webp', fullJpg: '/images/bono-7.jpg', smJpg: '/images/bono-7-sm.jpg' },
 };
 
 const BONUS_ICONS: Record<number, React.ReactNode> = {
@@ -39,7 +39,7 @@ const BONUS_ICONS: Record<number, React.ReactNode> = {
 };
 
 interface BonusImageItemProps {
-  imgData: { full: string; sm: string };
+  imgData: { full: string; sm: string; fullJpg: string; smJpg: string };
   alt: string;
   tag: string;
 }
@@ -48,20 +48,25 @@ const BonusImageItem: React.FC<BonusImageItemProps> = ({ imgData, alt, tag }) =>
   return (
     <div className="space-y-3 mb-3.5">
       <div className="relative rounded-xl overflow-hidden border border-orange-500/30 bg-zinc-950 shadow-lg group-hover:border-orange-500/60 transition-all duration-300">
-        <img
-          src={imgData.sm}
-          srcSet={`${imgData.sm} 360w, ${imgData.full} 600w`}
-          sizes="(max-width: 640px) 360px, 300px"
-          alt={alt}
-          loading="eager"
-          decoding="async"
-          onError={(e) => {
-            const target = e.currentTarget;
-            target.srcset = '';
-            target.src = imgData.sm.replace('.webp', '.jpg');
-          }}
-          className="w-full aspect-square object-cover group-hover:scale-105 transition-all duration-300 filter contrast-[1.02] brightness-[1.02]"
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcSet={`${imgData.sm} 360w, ${imgData.full} 600w`}
+            sizes="(max-width: 640px) 360px, 300px"
+          />
+          <source
+            type="image/jpeg"
+            srcSet={`${imgData.smJpg} 360w, ${imgData.fullJpg} 600w`}
+            sizes="(max-width: 640px) 360px, 300px"
+          />
+          <img
+            src={imgData.smJpg}
+            alt={alt}
+            loading="eager"
+            decoding="async"
+            className="w-full aspect-square object-cover group-hover:scale-105 transition-all duration-300 filter contrast-[1.02] brightness-[1.02]"
+          />
+        </picture>
         <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/85 backdrop-blur-sm text-[10px] font-bold text-orange-400 uppercase tracking-wider border border-zinc-800 z-10">
           {tag}
         </div>

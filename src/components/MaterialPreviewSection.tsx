@@ -16,6 +16,14 @@ export const MaterialPreviewSection: React.FC = () => {
 
   // Optional auto-advance every 5 seconds
   useEffect(() => {
+    // Pre-cache all slide images for instant navigation
+    PREVIEW_CAROUSEL_SLIDES.forEach((slide) => {
+      const img1 = new Image();
+      img1.src = slide.image;
+      const img2 = new Image();
+      img2.src = slide.image.replace('.webp', '.jpg');
+    });
+
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % totalSlides);
     }, 5000);
@@ -49,18 +57,23 @@ export const MaterialPreviewSection: React.FC = () => {
           
           {/* Main Slide Display Area */}
           <div className="relative h-[290px] sm:h-[360px] md:h-[400px] w-full overflow-hidden">
-            <img
-              key={activeSlide.id}
-              src={activeSlide.image}
-              alt={activeSlide.title}
-              loading="lazy"
-              decoding="async"
-              onError={(e) => {
-                const target = e.currentTarget;
-                target.src = activeSlide.image.replace('.webp', '.jpg');
-              }}
-              className="w-full h-full object-cover object-center filter brightness-90 contrast-105 transition-all duration-500 ease-out"
-            />
+            <picture key={activeSlide.id}>
+              <source
+                type="image/webp"
+                srcSet={activeSlide.image}
+              />
+              <source
+                type="image/jpeg"
+                srcSet={activeSlide.image.replace('.webp', '.jpg')}
+              />
+              <img
+                src={activeSlide.image.replace('.webp', '.jpg')}
+                alt={activeSlide.title}
+                loading="eager"
+                decoding="async"
+                className="w-full h-full object-cover object-center filter brightness-90 contrast-105 transition-all duration-500 ease-out"
+              />
+            </picture>
 
             {/* Gradient Overlays */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/40 to-transparent" />

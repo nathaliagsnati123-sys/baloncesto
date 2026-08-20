@@ -31,20 +31,25 @@ export const OfferSection: React.FC = () => {
 
           {/* Bundle Showcase Image */}
           <div className="relative my-2.5 rounded-xl overflow-hidden bg-zinc-950/70 border border-zinc-800/90 p-2 shadow-inner">
-            <img
-              src="/images/hero-sm.webp"
-              srcSet="/images/hero-sm.webp 420w, /images/hero.webp 640w"
-              sizes="(max-width: 640px) 360px, 420px"
-              alt="Colección +1.000 Ejercicios de Baloncesto"
-              loading="lazy"
-              decoding="async"
-              onError={(e) => {
-                const target = e.currentTarget;
-                target.srcset = '';
-                target.src = '/images/hero-sm.jpg';
-              }}
-              className="w-full h-auto max-h-[220px] sm:max-h-[260px] object-contain mx-auto filter contrast-[1.03] brightness-[1.02]"
-            />
+            <picture>
+              <source
+                type="image/webp"
+                srcSet="/images/hero-sm.webp 420w, /images/hero.webp 640w"
+                sizes="(max-width: 640px) 360px, 420px"
+              />
+              <source
+                type="image/jpeg"
+                srcSet="/images/hero-sm.jpg 420w, /images/hero.jpg 640w"
+                sizes="(max-width: 640px) 360px, 420px"
+              />
+              <img
+                src="/images/hero-sm.jpg"
+                alt="Colección +1.000 Ejercicios de Baloncesto"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-auto max-h-[220px] sm:max-h-[260px] object-contain mx-auto filter contrast-[1.03] brightness-[1.02]"
+              />
+            </picture>
           </div>
 
           {/* Price Anchoring */}

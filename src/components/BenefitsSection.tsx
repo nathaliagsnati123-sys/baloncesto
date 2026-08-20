@@ -41,20 +41,25 @@ export const BenefitsSection: React.FC = () => {
               >
                 {/* Photo half */}
                 <div className="sm:w-1/2 relative overflow-hidden h-36 sm:h-auto">
-                  <img
-                    src={item.image.replace('.webp', '-sm.webp')}
-                    srcSet={`${item.image.replace('.webp', '-sm.webp')} 360w, ${item.image} 600w`}
-                    sizes="(max-width: 640px) 360px, 400px"
-                    alt={item.title}
-                    loading="lazy"
-                    decoding="async"
-                    onError={(e) => {
-                      const target = e.currentTarget;
-                      target.srcset = '';
-                      target.src = item.image.replace('.webp', '-sm.jpg');
-                    }}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90 contrast-105"
-                  />
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcSet={`${item.image.replace('.webp', '-sm.webp')} 360w, ${item.image} 600w`}
+                      sizes="(max-width: 640px) 360px, 400px"
+                    />
+                    <source
+                      type="image/jpeg"
+                      srcSet={`${item.image.replace('.webp', '-sm.jpg')} 360w, ${item.image.replace('.webp', '.jpg')} 600w`}
+                      sizes="(max-width: 640px) 360px, 400px"
+                    />
+                    <img
+                      src={item.image.replace('.webp', '-sm.jpg')}
+                      alt={item.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90 contrast-105"
+                    />
+                  </picture>
                   <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-transparent to-zinc-900" />
                   <div className="absolute top-3 left-3 bg-black/80 backdrop-blur-md px-2 py-0.5 rounded text-[11px] font-bold text-orange-400 uppercase font-heading border border-zinc-800">
                     0{idx + 1}
@@ -86,20 +91,25 @@ export const BenefitsSection: React.FC = () => {
               >
                 {/* Visual Thumbnail */}
                 <div className="relative h-32 sm:h-36 rounded-xl overflow-hidden mb-3 border border-zinc-800">
-                  <img
-                    src={item.image.replace('.webp', '-sm.webp')}
-                    srcSet={`${item.image.replace('.webp', '-sm.webp')} 360w, ${item.image} 600w`}
-                    sizes="(max-width: 640px) 360px, 300px"
-                    alt={item.title}
-                    loading="lazy"
-                    decoding="async"
-                    onError={(e) => {
-                      const target = e.currentTarget;
-                      target.srcset = '';
-                      target.src = item.image.replace('.webp', '-sm.jpg');
-                    }}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
-                  />
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcSet={`${item.image.replace('.webp', '-sm.webp')} 360w, ${item.image} 600w`}
+                      sizes="(max-width: 640px) 360px, 300px"
+                    />
+                    <source
+                      type="image/jpeg"
+                      srcSet={`${item.image.replace('.webp', '-sm.jpg')} 360w, ${item.image.replace('.webp', '.jpg')} 600w`}
+                      sizes="(max-width: 640px) 360px, 300px"
+                    />
+                    <img
+                      src={item.image.replace('.webp', '-sm.jpg')}
+                      alt={item.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
+                    />
+                  </picture>
                   <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-transparent to-transparent" />
                   <div className="absolute top-2.5 left-2.5 bg-black/80 backdrop-blur-md px-2 py-0.5 rounded text-[11px] font-bold text-orange-400 uppercase font-heading border border-zinc-800">
                     0{idx + 3}

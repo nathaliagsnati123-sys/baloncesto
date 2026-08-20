@@ -60,18 +60,25 @@ export const TestimonialsSection: React.FC = () => {
 
               {/* Author Info */}
               <div className="pt-4 border-t border-zinc-800/80 flex items-center gap-3">
-                <img
-                  src={item.avatar}
-                  alt={item.name}
-                  loading="lazy"
-                  decoding="async"
-                  onError={(e) => {
-                    e.currentTarget.src = item.avatar.replace('.webp', '.jpg');
-                  }}
-                  width="40"
-                  height="40"
-                  className="w-10 h-10 rounded-full object-cover border border-zinc-700"
-                />
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcSet={item.avatar}
+                  />
+                  <source
+                    type="image/jpeg"
+                    srcSet={item.avatar.replace('.webp', '.jpg')}
+                  />
+                  <img
+                    src={item.avatar.replace('.webp', '.jpg')}
+                    alt={item.name}
+                    loading="lazy"
+                    decoding="async"
+                    width="40"
+                    height="40"
+                    className="w-10 h-10 rounded-full object-cover border border-zinc-700"
+                  />
+                </picture>
                 <div>
                   <div className="font-heading font-bold text-white text-base tracking-wide group-hover:text-orange-400 transition-colors">
                     {item.name}

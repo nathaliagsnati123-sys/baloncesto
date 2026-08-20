@@ -6,16 +6,17 @@ export const HeroSection: React.FC = () => {
     <section id="hero" className="relative min-h-[75vh] flex items-center justify-center overflow-hidden pt-4 sm:pt-6 pb-8 sm:pb-10 subtle-court-bg">
       {/* Background Court Atmosphere */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <img
-          src="/images/benefit-1-sm.webp"
-          alt=""
-          loading="lazy"
-          decoding="async"
-          onError={(e) => {
-            e.currentTarget.src = '/images/benefit-1.jpg';
-          }}
-          className="w-full h-full object-cover object-center opacity-10 filter grayscale contrast-125"
-        />
+        <picture>
+          <source type="image/webp" srcSet="/images/benefit-1-sm.webp" />
+          <source type="image/jpeg" srcSet="/images/benefit-1-sm.jpg" />
+          <img
+            src="/images/benefit-1-sm.jpg"
+            alt=""
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover object-center opacity-10 filter grayscale contrast-125"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-b from-[#09090b]/90 via-[#09090b]/95 to-[#09090b]" />
       </div>
 
@@ -48,20 +49,26 @@ export const HeroSection: React.FC = () => {
 
           {/* Image Container Card */}
           <div className="relative rounded-2xl overflow-hidden bg-zinc-900/90 border border-zinc-800 shadow-2xl shadow-black/80 transition-transform duration-300 group-hover:scale-[1.01]">
-            <img
-              src="/images/hero-sm.webp"
-              srcSet="/images/hero-sm.webp 420w, /images/hero.webp 640w"
-              sizes="(max-width: 640px) 420px, 640px"
-              alt="Colección +1.000 Ejercicios de Baloncesto"
-              fetchPriority="high"
-              decoding="async"
-              onError={(e) => {
-                const target = e.currentTarget;
-                target.srcset = '';
-                target.src = '/images/hero-sm.jpg';
-              }}
-              className="w-full h-auto max-h-[340px] sm:max-h-[420px] md:max-h-[480px] lg:max-h-[520px] object-contain mx-auto filter contrast-[1.03] brightness-[1.02]"
-            />
+            <picture>
+              <source
+                type="image/webp"
+                srcSet="/images/hero-sm.webp 420w, /images/hero.webp 640w"
+                sizes="(max-width: 640px) 420px, 640px"
+              />
+              <source
+                type="image/jpeg"
+                srcSet="/images/hero-sm.jpg 420w, /images/hero.jpg 640w"
+                sizes="(max-width: 640px) 420px, 640px"
+              />
+              <img
+                src="/images/hero-sm.jpg"
+                alt="Colección +1.000 Ejercicios de Baloncesto"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                className="w-full h-auto max-h-[340px] sm:max-h-[420px] md:max-h-[480px] lg:max-h-[520px] object-contain mx-auto filter contrast-[1.03] brightness-[1.02]"
+              />
+            </picture>
           </div>
         </div>
 

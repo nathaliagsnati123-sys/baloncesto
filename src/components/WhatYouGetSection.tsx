@@ -83,17 +83,25 @@ export const WhatYouGetSection: React.FC = () => {
               className={`group relative rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800 hover:border-zinc-700 transition-all duration-200 ${item.span || 'col-span-1'} h-48 sm:h-56`}
             >
               {/* Image */}
-              <img
-                src={item.image}
-                alt={item.title}
-                loading="lazy"
-                decoding="async"
-                onError={(e) => {
-                  const target = e.currentTarget;
-                  target.src = item.image.replace('.webp', '.jpg');
-                }}
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 filter brightness-90 contrast-105"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet={`${item.image.replace('.webp', '-sm.webp')} 360w, ${item.image} 600w`}
+                  sizes="(max-width: 640px) 360px, 500px"
+                />
+                <source
+                  type="image/jpeg"
+                  srcSet={`${item.image.replace('.webp', '-sm.jpg')} 360w, ${item.image.replace('.webp', '.jpg')} 600w`}
+                  sizes="(max-width: 640px) 360px, 500px"
+                />
+                <img
+                  src={item.image.replace('.webp', '.jpg')}
+                  alt={item.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 filter brightness-90 contrast-105"
+                />
+              </picture>
 
               {/* Gradient Dark Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/50 to-transparent opacity-90 group-hover:opacity-80 transition-opacity" />
