@@ -47,6 +47,8 @@ export const HeroSection: React.FC = () => {
             <img
               src="https://i.ibb.co/FSktNLw/Gemini-Generated-Image-ffq83tffq83tffq8.jpg"
               alt="Colección +1.000 Ejercicios de Baloncesto"
+              fetchPriority="high"
+              decoding="async"
               className="w-full h-auto max-h-[340px] sm:max-h-[420px] md:max-h-[480px] lg:max-h-[520px] object-contain mx-auto filter contrast-[1.03] brightness-[1.02]"
               referrerPolicy="no-referrer"
             />

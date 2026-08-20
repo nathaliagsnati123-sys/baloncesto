@@ -53,6 +53,8 @@ export const MaterialPreviewSection: React.FC = () => {
               key={activeSlide.id}
               src={activeSlide.image}
               alt={activeSlide.title}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover object-center filter brightness-90 contrast-105 transition-all duration-500 ease-out"
               referrerPolicy="no-referrer"
             />

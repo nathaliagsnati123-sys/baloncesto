@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { 
   Award, 
   BookOpen, 
@@ -38,7 +38,53 @@ const BONUS_ICONS: Record<number, React.ReactNode> = {
   7: <Video className="w-8 h-8 text-[#ff5500]" />,
 };
 
+interface BonusImageItemProps {
+  src: string;
+  alt: string;
+  tag: string;
+}
+
+const BonusImageItem: React.FC<BonusImageItemProps> = ({ src, alt, tag }) => {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <div className="space-y-3 mb-3.5">
+      <div className="relative rounded-xl overflow-hidden border border-orange-500/30 bg-zinc-950 shadow-lg group-hover:border-orange-500/60 transition-all duration-300">
+        {/* Placeholder Skeleton shimmer while image is loading */}
+        {!loaded && (
+          <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-800/80 to-zinc-900 animate-pulse flex items-center justify-center">
+            <span className="text-[10px] text-zinc-600 font-medium uppercase tracking-wider">Cargando...</span>
+          </div>
+        )}
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          decoding="async"
+          onLoad={() => setLoaded(true)}
+          className={`w-full aspect-square object-cover group-hover:scale-105 transition-all duration-300 filter contrast-[1.02] brightness-[1.02] ${
+            loaded ? 'opacity-100' : 'opacity-0'
+          }`}
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/85 backdrop-blur-sm text-[10px] font-bold text-orange-400 uppercase tracking-wider border border-zinc-800 z-10">
+          {tag}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const BonusesSection: React.FC = () => {
+  // Preload all bonus images in the background on initial load
+  useEffect(() => {
+    Object.values(BONUS_IMAGES).forEach((url) => {
+      const img = new Image();
+      img.decoding = 'async';
+      img.src = url;
+    });
+  }, []);
+
   return (
     <section id="bonos" className="relative py-10 sm:py-14 bg-[#0c0c10] border-t border-zinc-800/80 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -91,19 +137,11 @@ export const BonusesSection: React.FC = () => {
 
                 {/* Bonus Visual Display: Custom Image for Bonuses with cover or Icon Box for others */}
                 {BONUS_IMAGES[bonus.number] ? (
-                  <div className="space-y-3 mb-3.5">
-                    <div className="relative rounded-xl overflow-hidden border border-orange-500/30 bg-zinc-950/90 shadow-lg group-hover:border-orange-500/60 transition-all duration-300">
-                      <img
-                        src={BONUS_IMAGES[bonus.number]}
-                        alt={bonus.title}
-                        className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-300 filter contrast-[1.02] brightness-[1.02]"
-                        referrerPolicy="no-referrer"
-                      />
-                      <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/85 backdrop-blur-sm text-[10px] font-bold text-orange-400 uppercase tracking-wider border border-zinc-800">
-                        {bonus.tag}
-                      </div>
-                    </div>
-                  </div>
+                  <BonusImageItem
+                    src={BONUS_IMAGES[bonus.number]}
+                    alt={bonus.title}
+                    tag={bonus.tag}
+                  />
                 ) : (
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-11 h-11 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center shrink-0 group-hover:bg-orange-500/20 group-hover:scale-105 transition-all">

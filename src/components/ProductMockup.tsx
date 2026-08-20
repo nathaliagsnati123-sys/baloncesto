@@ -43,6 +43,8 @@ export const ProductMockup: React.FC<ProductMockupProps> = ({ className = '', si
                 <img
                   src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=800&q=80"
                   alt="Jugador de baloncesto entrenando"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover object-center filter contrast-110 brightness-95"
                   referrerPolicy="no-referrer"
                 />
