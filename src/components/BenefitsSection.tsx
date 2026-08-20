@@ -44,25 +44,13 @@ export const BenefitsSection: React.FC = () => {
                 >
                   {/* Photo half */}
                   <div className="sm:w-1/2 relative overflow-hidden h-36 sm:h-auto">
-                    <picture>
-                      <source
-                        type="image/webp"
-                        srcSet={`${imgData.webpSm} 360w, ${imgData.webp} 600w`}
-                        sizes="(max-width: 640px) 360px, 400px"
-                      />
-                      <source
-                        type="image/jpeg"
-                        srcSet={`${imgData.jpgSm} 360w, ${imgData.jpg} 600w`}
-                        sizes="(max-width: 640px) 360px, 400px"
-                      />
-                      <img
-                        src={imgData.jpgSm}
-                        alt={item.title}
-                        loading="lazy"
-                        decoding="async"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90 contrast-105"
-                      />
-                    </picture>
+                    <img
+                      src={imgData.jpg}
+                      alt={item.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90 contrast-105"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-transparent to-zinc-900" />
                     <div className="absolute top-3 left-3 bg-black/80 backdrop-blur-md px-2 py-0.5 rounded text-[11px] font-bold text-orange-400 uppercase font-heading border border-zinc-800">
                       0{idx + 1}
@@ -97,25 +85,13 @@ export const BenefitsSection: React.FC = () => {
                 >
                   {/* Visual Thumbnail */}
                   <div className="relative h-32 sm:h-36 rounded-xl overflow-hidden mb-3 border border-zinc-800">
-                    <picture>
-                      <source
-                        type="image/webp"
-                        srcSet={`${imgData.webpSm} 360w, ${imgData.webp} 600w`}
-                        sizes="(max-width: 640px) 360px, 300px"
-                      />
-                      <source
-                        type="image/jpeg"
-                        srcSet={`${imgData.jpgSm} 360w, ${imgData.jpg} 600w`}
-                        sizes="(max-width: 640px) 360px, 300px"
-                      />
-                      <img
-                        src={imgData.jpgSm}
-                        alt={item.title}
-                        loading="lazy"
-                        decoding="async"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
-                      />
-                    </picture>
+                    <img
+                      src={imgData.jpg}
+                      alt={item.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-transparent to-transparent" />
                     <div className="absolute top-2.5 left-2.5 bg-black/80 backdrop-blur-md px-2 py-0.5 rounded text-[11px] font-bold text-orange-400 uppercase font-heading border border-zinc-800">
                       0{idx + 3}

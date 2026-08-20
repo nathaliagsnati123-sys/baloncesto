@@ -49,25 +49,13 @@ const BonusImageItem: React.FC<BonusImageItemProps> = ({ imgData, alt, tag }) =>
   return (
     <div className="space-y-3 mb-3.5">
       <div className="relative rounded-xl overflow-hidden border border-orange-500/30 bg-zinc-950 shadow-lg group-hover:border-orange-500/60 transition-all duration-300">
-        <picture>
-          <source
-            type="image/webp"
-            srcSet={`${imgData.sm} 360w, ${imgData.full} 600w`}
-            sizes="(max-width: 640px) 360px, 300px"
-          />
-          <source
-            type="image/jpeg"
-            srcSet={`${imgData.smJpg} 360w, ${imgData.fullJpg} 600w`}
-            sizes="(max-width: 640px) 360px, 300px"
-          />
-          <img
-            src={imgData.smJpg}
-            alt={alt}
-            loading="eager"
-            decoding="async"
-            className="w-full aspect-square object-cover group-hover:scale-105 transition-all duration-300 filter contrast-[1.02] brightness-[1.02]"
-          />
-        </picture>
+        <img
+          src={imgData.fullJpg}
+          alt={alt}
+          loading="lazy"
+          decoding="async"
+          className="w-full aspect-square object-cover group-hover:scale-105 transition-all duration-300 filter contrast-[1.02] brightness-[1.02]"
+        />
         <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/85 backdrop-blur-sm text-[10px] font-bold text-orange-400 uppercase tracking-wider border border-zinc-800 z-10">
           {tag}
         </div>

@@ -99,25 +99,13 @@ export const WhatYouGetSection: React.FC = () => {
                 className={`group relative rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800 hover:border-zinc-700 transition-all duration-200 ${item.span || 'col-span-1'} h-48 sm:h-56`}
               >
                 {/* Image */}
-                <picture>
-                  <source
-                    type="image/webp"
-                    srcSet={`${smWebp} 360w, ${lgWebp} 600w`}
-                    sizes="(max-width: 640px) 360px, 500px"
-                  />
-                  <source
-                    type="image/jpeg"
-                    srcSet={`${smJpg} 360w, ${lgJpg} 600w`}
-                    sizes="(max-width: 640px) 360px, 500px"
-                  />
-                  <img
-                    src={lgJpg}
-                    alt={item.title}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 filter brightness-90 contrast-105"
-                  />
-                </picture>
+                <img
+                  src={lgJpg}
+                  alt={item.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 filter brightness-90 contrast-105"
+                />
 
                 {/* Gradient Dark Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/50 to-transparent opacity-90 group-hover:opacity-80 transition-opacity" />

@@ -50,26 +50,14 @@ export const HeroSection: React.FC = () => {
 
           {/* Image Container Card */}
           <div className="relative rounded-2xl overflow-hidden bg-zinc-900/90 border border-zinc-800 shadow-2xl shadow-black/80 transition-transform duration-300 group-hover:scale-[1.01]">
-            <picture>
-              <source
-                type="image/webp"
-                srcSet={`${IMAGES.hero.webpSm} 420w, ${IMAGES.hero.webp} 640w`}
-                sizes="(max-width: 640px) 420px, 640px"
-              />
-              <source
-                type="image/jpeg"
-                srcSet={`${IMAGES.hero.jpgSm} 420w, ${IMAGES.hero.jpg} 640w`}
-                sizes="(max-width: 640px) 420px, 640px"
-              />
-              <img
-                src={IMAGES.hero.jpgSm}
-                alt="Colección +1.000 Ejercicios de Baloncesto"
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-                className="w-full h-auto max-h-[340px] sm:max-h-[420px] md:max-h-[480px] lg:max-h-[520px] object-contain mx-auto filter contrast-[1.03] brightness-[1.02]"
-              />
-            </picture>
+            <img
+              src={IMAGES.hero.jpg}
+              alt="Colección +1.000 Ejercicios de Baloncesto"
+              loading="eager"
+              fetchPriority="high"
+              decoding="sync"
+              className="w-full h-auto max-h-[340px] sm:max-h-[420px] md:max-h-[480px] lg:max-h-[520px] object-contain mx-auto filter contrast-[1.03] brightness-[1.02]"
+            />
           </div>
         </div>
 

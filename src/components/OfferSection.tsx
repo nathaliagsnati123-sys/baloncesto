@@ -32,25 +32,13 @@ export const OfferSection: React.FC = () => {
 
           {/* Bundle Showcase Image */}
           <div className="relative my-2.5 rounded-xl overflow-hidden bg-zinc-950/70 border border-zinc-800/90 p-2 shadow-inner">
-            <picture>
-              <source
-                type="image/webp"
-                srcSet={`${IMAGES.hero.webpSm} 420w, ${IMAGES.hero.webp} 640w`}
-                sizes="(max-width: 640px) 360px, 420px"
-              />
-              <source
-                type="image/jpeg"
-                srcSet={`${IMAGES.hero.jpgSm} 420w, ${IMAGES.hero.jpg} 640w`}
-                sizes="(max-width: 640px) 360px, 420px"
-              />
-              <img
-                src={IMAGES.hero.jpgSm}
-                alt="Colección +1.000 Ejercicios de Baloncesto"
-                loading="lazy"
-                decoding="async"
-                className="w-full h-auto max-h-[220px] sm:max-h-[260px] object-contain mx-auto filter contrast-[1.03] brightness-[1.02]"
-              />
-            </picture>
+            <img
+              src={IMAGES.hero.jpg}
+              alt="Colección +1.000 Ejercicios de Baloncesto"
+              loading="lazy"
+              decoding="async"
+              className="w-full h-auto max-h-[220px] sm:max-h-[260px] object-contain mx-auto filter contrast-[1.03] brightness-[1.02]"
+            />
           </div>
 
           {/* Price Anchoring */}

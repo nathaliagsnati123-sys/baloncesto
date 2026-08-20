@@ -41,23 +41,13 @@ export const ProductMockup: React.FC<ProductMockupProps> = ({ className = '', si
 
               {/* Cover Central Hero Photo with Court Overlay */}
               <div className="relative h-40 sm:h-48 rounded-lg overflow-hidden my-3 border border-zinc-800">
-                <picture>
-                  <source
-                    type="image/webp"
-                    srcSet={IMAGES.benefits[1].webpSm}
-                  />
-                  <source
-                    type="image/jpeg"
-                    srcSet={IMAGES.benefits[1].jpgSm}
-                  />
-                  <img
-                    src={IMAGES.benefits[1].jpgSm}
-                    alt="Jugador de baloncesto entrenando"
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover object-center filter contrast-110 brightness-95"
-                  />
-                </picture>
+                <img
+                  src={IMAGES.benefits[1].jpg}
+                  alt="Jugador de baloncesto entrenando"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover object-center filter contrast-110 brightness-95"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-black/30 to-transparent" />
 
                 {/* Big + 1.000 Badge Overlay */}
